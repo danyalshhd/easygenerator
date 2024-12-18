@@ -50,7 +50,7 @@ export class AuthService {
       throw new BadRequestException('Incorrect Password');
     }
 
-    const token = this.generateJwt({
+    const token: string = this.generateJwt({
       sub: userExists.id,
       email: userExists.email,
     });
@@ -62,12 +62,12 @@ export class AuthService {
     const hashPass = await this.hashPassword(user.password);
 
     this.logger.log('creating user')
-    const newUser = await this.userModel.create({
+    const newUser: User = await this.userModel.create({
       ...user,
       password: hashPass,
     });
 
-    const token = this.generateJwt({
+    const token: string = this.generateJwt({
       sub: newUser.id,
       email: newUser.email,
     });
@@ -79,8 +79,8 @@ export class AuthService {
     };
   }
 
-  async findUserByEmail(email) {
-    const user = await this.userModel.findOne({ email });
+  async findUserByEmail(email: string) {
+    const user: User = await this.userModel.findOne({ email });
 
     if (!user) {
       return null;

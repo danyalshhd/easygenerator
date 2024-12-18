@@ -4,6 +4,7 @@ import {
   IsMongoId,
   IsNotEmpty,
   IsString,
+  Matches,
   Validate,
 } from 'class-validator';
 import mongoose from 'mongoose';
@@ -23,6 +24,10 @@ export class RegisterUserDto {
 
   @IsString()
   @IsNotEmpty()
+  @Matches(/^(?=.*[!@#$%^&*(),.?":{}|<>])(?=.*\d)(?=.*[a-zA-Z]).{8,}$/, {
+    message:
+      'Password must be at least 8 characters long, include one special character, one number, and one letter',
+  })
   password: string;
 
   @IsString()
