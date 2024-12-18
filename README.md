@@ -22,8 +22,8 @@ The application is made in NestJS using mongoose and client side is made using r
 
 ##Improvement
 
-To avoid multiple login or ddos attack to figure out password, block the user after fifth attempt
-Have cache and rate limit the APIs using API Gateway and Lambdas
-Sharding the database to enable multi tenant clients load
-Apply security to APIs so it can be accessed only by the client end and not some random guy who has inspected xhr request
-use blue green deployments in order for the application not to get interrupted
+- To avoid multiple login or ddos attack to figure out password, block the user after fifth attempt
+- Have cache and rate limit the APIs using API Gateway and Lambdas
+- Sharding the database to enable multi tenant clients load
+- Apply security to APIs so it can be accessed only by the client end and not some random guy who has inspected xhr request
+- use blue green deployments in order for the application not to get interrupted
