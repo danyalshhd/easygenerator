@@ -19,3 +19,6 @@ https://www.loom.com/share/734a2e9b67aa4f55a8e3f5c1296b9fef?sid=d7997455-156f-41
 `http://localhost:4000/api-docs`
 
 The application is made in NestJS using mongoose and client side is made using react using redux, thunk and use states.
+
+##Improvement
+To avoid multiple login or ddos attack to figure out password, block the user after fifth attempt
